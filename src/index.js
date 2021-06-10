@@ -1,19 +1,7 @@
-let itemFactory = function(index, title, desc, due, priority){
-    return {index, title, desc, due, priority}
-}
+import './style.css'
+import {addForm} from './form.js'
+import {ProjectFactory} from './dataUtils.js'
 
-let ProjectFactory = function(index, name) {
-    let items = []
-    let addItem = function(title, desc, due, priority){
-        items.push(itemFactory(items.length,title, desc, due,priority))
-    }
-
-    let removeItem = function(index){
-        items.splice(index, 1)
-    }
-
-    return {index, name, items, addItem, removeItem}
-}
 
 let supremeDataLeader = (function() {
     let projects = []
@@ -27,9 +15,28 @@ let supremeDataLeader = (function() {
     return {projects, addProject, removeProject}
 })();
 
+console.log(supremeDataLeader)
+
 // ABOVE THIS LINE: DATA MANIPULATION~~~~~~~~~~~BELOW THIS LINE DOM STUFF
 
-let body = document.querySelector('body')
+addForm();
 
-let addItemContainer = document.createElement('div')
+function submitButtonListener() {
+    let button = document.getElementById('submitButton')
+    button.addEventListener('click', () =>{
+        let title  = document.getElementById('inputTitle')
+        let desc = document.getElementById('inputDesc')
+        let date = document.getElementById('inputDate')
+        let priority = Array.from(document.getElementsByClassName('active'))[0].innerHTML
+        console.log(title.value)
+        console.log(desc.value)
+        console.log(date.value)
+        console.log(priority)
+    })
+}
+
+
+submitButtonListener();
+
+
 

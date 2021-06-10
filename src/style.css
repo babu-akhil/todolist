@@ -1,0 +1,40 @@
+#form-container {
+    margin: 30vh 40vw;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+#prioritySelector p{
+    margin: 0px;
+}
+
+#priorityButtons {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#priorityButtons button{
+    margin-right: 0px;
+    font-size: 20px;
+    width:100%;
+    border: 1px solid rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.05)
+}
+
+#priorityButtons>button:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+
+#submitButton {
+    margin-top: 20px;
+    width: 80px;
+    align-self: flex-end;
+}
