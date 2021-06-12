@@ -34,10 +34,21 @@ function priorityListener(){
 
 function addForm(){
 
+    let topBar = document.getElementById('topBar')
     let body = document.querySelector('body')
+    let newItemButton = document.createElement('button')
+    newItemButton.id = 'newItemButton'
+    newItemButton.innerHTML ='+'
+
+    newItemButton.addEventListener('click', ()=> {
+        formVisibilityToggle()
+    })
+
+    topBar.appendChild(newItemButton)
 
     let addItemContainer = document.createElement('div')
     addItemContainer.id = 'form-container'
+    addItemContainer.style.visibility = 'hidden'
 
     let inputTitle = document.createElement('input')
     inputTitle.id = 'inputTitle'
@@ -115,4 +126,9 @@ function addForm(){
     priorityListener()
 }
 
-export {addForm};
+function formVisibilityToggle() {
+    let form = document.getElementById('form-container')
+    form.style.visibility = (form.style.visibility=='visible')?'hidden':'visible'
+}
+
+export {addForm, formVisibilityToggle};

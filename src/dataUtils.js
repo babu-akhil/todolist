@@ -15,4 +15,25 @@ function ProjectFactory(index, name) {
     return {index, name, items, addItem, removeItem}
 }
 
-export {itemFactory, ProjectFactory}
+let supremeDataLeader = (function() {
+    let projects = []
+    let addProject = function(name){
+        projects.push(ProjectFactory(projects.length, name))
+    }
+    let removeProject = function(index){
+        projects.splice(index, 1)
+    }
+
+    let viewProject = function(index){
+        return (projects[index])
+    }
+    addProject('default')
+    projects[0].addItem('blaa', 'blingblopo', 'TODAY', 'high')
+    return {projects, addProject, removeProject, viewProject}
+})();
+
+function addItemToProject(index, title, desc, date, priority) {
+    supremeDataLeader.projects[index].addItem(title, desc, date, priority)
+}
+
+export {ProjectFactory, addItemToProject, supremeDataLeader}

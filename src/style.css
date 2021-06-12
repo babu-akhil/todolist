@@ -1,8 +1,44 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+
+body{
+    background-color: #90E0EF;
+    font-family: 'Inconsolata', monospace;
+}
+
+#topBar {
+    width: 98.5vw;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 50px;
+    background-color: #48CAE4;
+}
+
+#newItemButton {
+    height: 50px;
+    width: 50px;
+    border: 1px solid rgba(0,0,0,0.05);
+    background-color: #00B4D8;
+    font-size: 40px;
+    color: white;
+}
+
+#projectsMenuButton {
+    margin-left: 5px;
+    height: 50px;
+    width: 50px;
+}
+
 #form-container {
     margin: 30vh 40vw;
     width: 20vw;
     display: flex;
     flex-direction: column;
+    position: absolute;
 }
 
 input {
@@ -37,4 +73,29 @@ input {
     margin-top: 20px;
     width: 80px;
     align-self: flex-end;
+}
+
+ul {
+    list-style: none;
+}
+
+.itemContainer {
+    font-size: 20px;
+    background-color: #00B4D8;
+    float: left;
+    padding: 10px 10px 0px 10px;
+}
+
+.itemPreview {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+
+@media(max-width:360px) {
+    #topBar {
+        font-size: 40px
+    }
 }
